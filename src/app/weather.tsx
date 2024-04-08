@@ -17,11 +17,11 @@ export async function Weather({
 
   return (
     <div>
-      <h1 className="text-2xl">Weather</h1>
+      <h1>Weather</h1>
       <p>Temperature: {weather.current.temperature_2m}</p>
       <p>Wind speed: {weather.current.wind_speed_10m}</p>
 
-      <h2 className="text-xl">Hourly</h2>
+      <h2>Hourly</h2>
 
       <table>
         <thead>

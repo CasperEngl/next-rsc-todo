@@ -15,11 +15,9 @@ export function AddTodo() {
         formRef.current?.reset();
       }}
     >
-      <input type="text" name="text" className="border" />
+      <input type="text" name="text" />
 
-      <button type="submit" className="border">
-        Add
-      </button>
+      <button type="submit">Add</button>
     </form>
   );
 }

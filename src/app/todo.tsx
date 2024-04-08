@@ -11,7 +11,7 @@ export function Todo(props: { todo: InferSelectModel<typeof todos> }) {
   const [editing, setEditing] = React.useState(false);
 
   return (
-    <div className="flex items-center gap-2">
+    <div>
       <input
         type="checkbox"
         checked={!!props.todo.done}
@@ -44,7 +44,6 @@ export function Todo(props: { todo: InferSelectModel<typeof todos> }) {
 
             setEditing(false);
           }}
-          className="inline-flex gap-2"
         >
           <input type="hidden" name="id" value={props.todo.id} />
 
@@ -53,19 +52,12 @@ export function Todo(props: { todo: InferSelectModel<typeof todos> }) {
             name="text"
             defaultValue={props.todo.text}
             ref={inputRef}
-            className="border"
           />
 
-          <div className="inline-flex gap-1">
-            <button className="border" type="submit">
-              Save
-            </button>
+          <div>
+            <button type="submit">Save</button>
 
-            <button
-              className="border"
-              type="button"
-              onClick={() => setEditing(false)}
-            >
+            <button type="button" onClick={() => setEditing(false)}>
               Cancel
             </button>
           </div>
