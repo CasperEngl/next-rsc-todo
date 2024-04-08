@@ -22,13 +22,16 @@ export function Todo(props: { todo: InferSelectModel<typeof todos> }) {
 
       <button
         type="button"
-        onDoubleClick={async () => {
+        onClick={async () => {
+          if (!confirm("Are you sure?")) return;
+
           await removeTodo(props.todo.id);
         }}
         onKeyDown={async (event) => {
-          if (event.key === "Enter") {
-            await removeTodo(props.todo.id);
-          }
+          if (event.key !== "Enter") return;
+          if (!confirm("Are you sure?")) return;
+
+          await removeTodo(props.todo.id);
         }}
       >
         x
